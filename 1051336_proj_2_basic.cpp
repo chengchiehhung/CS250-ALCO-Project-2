@@ -2,7 +2,7 @@
 //  main.cpp
 //  low 3-bit predictor
 //
-//  Created by Larrykuo on 2022/5/14.
+//  Created by JeffCheng on 2022/5/14.
 //
 
 # include <iostream>
