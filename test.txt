@@ -1,0 +1,53 @@
+	li R1, 0 
+	li R2, 4 
+Loop:
+	beq R1, R2, End
+	addi R2, R2, -1 
+	beq R0, R0, Loop
+End:
+
+
+PC : 0	li R1 0 
+PC : 1	li R2 4 
+PC : 2	beq R1 R2 End 
+PC : 3	addi R2 R2 -1 
+PC : 4	beq R0 R0 Loop jump 
+PC : 2	beq R1 R2 End 
+PC : 3	addi R2 R2 -1 
+PC : 4	beq R0 R0 Loop jump 
+PC : 2	beq R1 R2 End 
+PC : 3	addi R2 R2 -1 
+PC : 4	beq R0 R0 Loop jump 
+PC : 2	beq R1 R2 End 
+PC : 3	addi R2 R2 -1 
+PC : 4	beq R0 R0 Loop jump 
+PC : 2	beq R1 R2 End jump 
+PC : 5
+
+
+		li R2,0			; v=0 //addi R2,R0,0
+		li R3,16		; Loop bound for LoopI //addi R3,R0,16
+		li R4,0			; i=0 //addi R4,R0,0
+	LoopI:
+		beq R4,R3,EndLoopI	; Exit LoopI if i==16
+		li R5,0			; j=0 //addi R5,R0,0
+	LoopJ:
+		beq R5,R3,EndLoopJ     ; Exit LoopJ if j==16
+		add R6,R5,R4		; j+i
+		andi R6,R6,3		; (j+i)%4
+		bne R6,R0,Endif	; Skip if (j+i)%4!=0
+		add R2,R2,R5		; v+=j
+	Endif:
+		addi R5,R5,1		; j++
+		beq R0,R0,LoopJ	; Go back to LoopJ
+	EndLoopJ:
+		addi R4,R4,1		; i++
+		beq R0,R0,LoopI	; Go back to LoopI
+	EndLoopI:
+
+1 525/817
+2 776/817
+4 784/817
+8 769/817
+16 785/817
+32 785/817
