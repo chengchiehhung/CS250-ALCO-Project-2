@@ -10,8 +10,10 @@ Demo 影片位置：https://yzu365-my.sharepoint.com/:f:/g/personal/s1051336_mai
 
 ## 重點功能說明
 1. 在程式碼中第 9 行 #define BIT_SIZE 可以指定此程式 n-bit 的 history predictor，此範例預設為 3-bit history predictor   
-2. 可以指定自由指定 entries 數量，如 2, 4, 8, 16, ... 等   
-3. 可進行解讀的 instructions 為 add, addi, beq, bne, li
+2. 可以指定自由指定 entries 數量，如 1, 2, 4, 8, 16, ... 等   
+3. 可進行解讀的 instructions 為 add, addi, beq, bne, li   
+4. 輸出結果最後面有額外加上統計數據，如此範例：在 9 個跳躍指令中猜中了 4 個
+
 
 ## 執行結果
 ![](https://github.com/chengchiehhung/CS250-ALCO-Project-2/blob/master/outcome/outcome_1.png)
